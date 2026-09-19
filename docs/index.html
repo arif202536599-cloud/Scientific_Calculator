@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102449">
+  <meta name="description" content="A secure blue-and-pink scientific calculator.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; media-src 'none'; worker-src 'none'; upgrade-insecure-requests">
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main class="calculator" aria-label="Scientific calculator">
+    <header class="titlebar">
+      <div>
+        <p class="eyebrow">BLUE &amp; PINK</p>
+        <h1>Scientific Calculator</h1>
+      </div>
+      <span class="security-badge" title="Static site with no data collection">SECURE</span>
+    </header>
+
+    <section class="display-wrap" aria-label="Calculator display">
+      <div class="display" role="status" aria-live="polite" aria-atomic="true">
+        <div class="history" id="history">Ready</div>
+        <div class="result" id="result">0</div>
+      </div>
+    </section>
+
+    <section class="keypad" id="keypad" aria-label="Calculator keypad">
+      <button type="button" class="mode" id="modeButton" data-action="mode">DEG</button>
+      <button type="button" class="science" data-action="function" data-value="sin">sin</button>
+      <button type="button" class="science" data-action="function" data-value="cos">cos</button>
+      <button type="button" class="science" data-action="function" data-value="tan">tan</button>
+      <button type="button" class="control" data-action="backspace" aria-label="Backspace">⌫</button>
+
+      <button type="button" class="science" data-action="parenthesis" data-value="(">(</button>
+      <button type="button" class="science" data-action="parenthesis" data-value=")">)</button>
+      <button type="button" class="science" data-action="function" data-value="sqrt" aria-label="Square root">√</button>
+      <button type="button" class="science" data-action="square">x²</button>
+      <button type="button" class="control" data-action="clear">AC</button>
+
+      <button type="button" class="digit" data-action="digit" data-value="7">7</button>
+      <button type="button" class="digit" data-action="digit" data-value="8">8</button>
+      <button type="button" class="digit" data-action="digit" data-value="9">9</button>
+      <button type="button" class="operator" data-action="operator" data-value="/" aria-label="Divide">÷</button>
+      <button type="button" class="science" data-action="function" data-value="log">log</button>
+
+      <button type="button" class="digit" data-action="digit" data-value="4">4</button>
+      <button type="button" class="digit" data-action="digit" data-value="5">5</button>
+      <button type="button" class="digit" data-action="digit" data-value="6">6</button>
+      <button type="button" class="operator" data-action="operator" data-value="*" aria-label="Multiply">×</button>
+      <button type="button" class="science" data-action="function" data-value="ln">ln</button>
+
+      <button type="button" class="digit" data-action="digit" data-value="1">1</button>
+      <button type="button" class="digit" data-action="digit" data-value="2">2</button>
+      <button type="button" class="digit" data-action="digit" data-value="3">3</button>
+      <button type="button" class="operator" data-action="operator" data-value="-" aria-label="Subtract">−</button>
+      <button type="button" class="science" data-action="operator" data-value="^" aria-label="Power">xʸ</button>
+
+      <button type="button" class="science" data-action="sign" aria-label="Change sign">±</button>
+      <button type="button" class="digit" data-action="digit" data-value="0">0</button>
+      <button type="button" class="digit" data-action="decimal">.</button>
+      <button type="button" class="operator" data-action="operator" data-value="+" aria-label="Add">+</button>
+      <button type="button" class="equals" data-action="calculate">=</button>
+
+      <button type="button" class="science" data-action="constant" data-value="pi">π</button>
+      <button type="button" class="science" data-action="constant" data-value="e">e</button>
+      <button type="button" class="science" data-action="percent">%</button>
+      <button type="button" class="science" data-action="reciprocal">1/x</button>
+      <button type="button" class="science" data-action="factorial">x!</button>
+    </section>
+
+    <footer>
+      <p class="status" id="status">DEG mode • Enter = calculate • Esc = clear</p>
+      <p class="privacy">Calculations stay in your browser. No account, cookies, or data collection.</p>
+    </footer>
+  </main>
+</body>
+</html>
